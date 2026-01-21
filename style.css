@@ -1,0 +1,482 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FUENTES */
+body {
+    font-family: "Inter", sans-serif;
+    background: #050008;
+    color: white;
+    overflow-x: hidden;
+}
+body {
+    background: url('img/simple-dark-purple-fog-gp9juxxa15z7qwt6.jpg') fixed;
+    background-size: cover;
+}
+
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 70px;
+    background: rgba(10, 0, 30, 0.45);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #862dff55;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Cinzel", serif;
+    font-size: 1.4rem;
+    color: #e8d3ff;
+    text-shadow: 0 0 10px #b05cff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e8d3ff;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+    text-shadow: 0 0 10px #c48fff;
+}
+
+.btn-graciela {
+    padding: 8px 14px;
+    background: #8f3dff;
+    border-radius: 20px;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 0 12px #a066ff;
+}
+
+/* HERO */
+.hero {
+    height: 600px;
+    padding-top: 130px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* NIEBLA ANIMADA */
+.energy-bg {
+    position: absolute;
+    width: 160%;
+    height: 160%;
+    top: -30%;
+    left: -30%;
+    background: radial-gradient(circle at center, #6b00ff55, #180033 60%, #050008 90%);
+    animation: moverNiebla 12s infinite alternate ease-in-out;
+    filter: blur(40px);
+    opacity: 0.75;
+}
+
+@keyframes moverNiebla {
+    from { transform: scale(1) translate(0,0); }
+    to { transform: scale(1.4) translate(60px, -40px); }
+}
+
+.titulo-hero {
+    font-family: "Cinzel", serif;
+    font-size: 2.8rem;
+    color: #ecdfff;
+    text-shadow: 0 0 20px #ae63ff;
+    position: relative;
+    z-index: 10;
+}
+
+.sub {
+    margin-top: 10px;
+    color: #d9c7ff;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* CARTAS HERO */
+.hero-cards {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-card {
+    width: 220px;
+    opacity: 0.9;
+    transform: rotate(-5deg);
+    animation: flotar 4s infinite alternate;
+    filter: drop-shadow(0 0 20px #9f53ff);
+}
+
+.delay1 { animation-delay: .4s; }
+.delay2 { animation-delay: .8s; }
+
+@keyframes flotar {
+    from { transform: translateY(0px) rotate(-5deg); }
+    to { transform: translateY(-15px) rotate(-3deg); }
+}
+
+/* SELECTOR DE SIGNOS */
+.signos {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.signos h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.signo-grid {
+    display: grid;
+    max-width: 550px;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.signo {
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    background: #120022;
+    border: 1px solid #8f3dff88;
+    transition: .3s;
+    box-shadow: 0 0 15px #8f3dff33;
+}
+
+.signo:hover {
+    transform: translateY(-6px);
+    background: #8f3dff33;
+    box-shadow: 0 0 35px #b166ff77;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.lectura {
+    animation: aparecer 0.8s ease-out;
+}
+
+
+/* CONTENEDOR DE LECTURA */
+.lectura {
+    padding: 80px 25px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.lectura h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Cinzel", serif;
+}
+
+.bloque {
+    background: #140025;
+    border: 1px solid #8f3dff55;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #9f53ff33;
+}
+
+/* TRES CARTAS */
+.tres-cartas {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* ENERGÍA */
+.energia-flex {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 25px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+    background: #0a0014;
+    color: #caa8ff;
+}
+
+/* ================================
+   ESTILO PARA PÁGINA DE GRACIELA
+   ================================ */
+
+/* HERO */
+.hero-graciela {
+    height: 420px;
+    text-align: center;
+    padding-top: 120px;
+    position: relative;
+    background: url('img/pngtree-mystical-purple-nebula-with-solitary-figure-image_16786288.jpg'), radial-gradient(circle at center, #4d0099aa, #0d001a);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #0a001555, #0a0015cc);
+    backdrop-filter: blur(4px);
+}
+
+.hero-title {
+    position: relative;
+    font-family: "Cinzel", serif;
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #b06bff;
+    z-index: 10;
+}
+
+.hero-subtitle {
+    position: relative;
+    z-index: 10;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #e6d6ff;
+}
+
+.btn-reservar-top {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: #9b4dff;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 0 20px #b17affaa;
+    transition: .3s;
+}
+
+.btn-reservar-top:hover {
+    background: #b67aff;
+    box-shadow: 0 0 25px #d5aaff;
+}
+
+/* SOBRE GRACIELA */
+.sobre-graciela {
+    padding: 70px 25px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.foto-graciela {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #b57aff;
+    margin-bottom: 25px;
+}
+
+
+.sobre-graciela h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #e7d2ff;
+}
+
+.sobre-graciela p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #e5d5ff;
+}
+
+/* SERVICIOS */
+.servicios {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-family: "Cinzel", serif;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.serv-grid {
+    display: grid;
+    max-width: 900px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.serv-card {
+    background: #140027;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #9b4dff55;
+    color: #e7d2ff;
+    box-shadow: 0 0 18px #8f3dff44;
+    transition: .3s;
+}
+
+.serv-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px #b57aff88;
+}
+
+/* TESTIMONIOS */
+.testimonios {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-family: "Cinzel", serif;
+    margin-bottom: 35px;
+    font-size: 2rem;
+}
+
+.testi-grid {
+    display: grid;
+    max-width: 900px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.testi-card {
+    background: #1d0033;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #8f3dff55;
+    color: #dec9ff;
+    box-shadow: 0 0 15px #8f3dff33;
+}
+
+.testi-text {
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.testi-name {
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+    color: #c3a6ff;
+}
+
+/* CTA FINAL */
+.cta-final {
+    padding: 70px 25px;
+    text-align: center;
+    background: radial-gradient(circle at center, #250043, #0a0014);
+}
+
+.cta-final h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: #e6d3ff;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.btn-reservar {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background: #9b4dff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 0 20px #9b4dffaa;
+    transition: .3s;
+}
+
+.btn-reservar:hover {
+    background: #b67aff;
+    box-shadow: 0 0 25px #d0aaff;
+}
+
+.numero {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #d8c1ff;
+}
+
+.card-3d{
+  width: 170px;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.card-inner{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .7s;
+}
+
+.card-3d.volteada .card-inner{
+  transform: rotateY(180deg);
+}
+
+.card-face{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 20px #a066ff);
+}
+
+.card-face.back{
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Mística - Tu Lectura del Día</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+   <nav class="navbar">
+        <div class="logo">✨ Energía Mística</div>
+
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#signos">Signos</a></li>
+            <li><a href="#lectura">Lectura</a></li>
+            <li><a href="graciela.html" class="btn-graciela">Lecturas con Graciela</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="energy-bg"></div>
+
+        <h1 class="titulo-hero">Descubre la Energía que Te Rodea Hoy</h1>
+        <p class="sub">Tu lectura del día está lista… solo escoge tu signo.</p>
+
+        <div class="hero-cards">
+            <img src="img/card.png" class="hero-card glow">
+            <img src="img/card.png" class="hero-card glow delay1">
+            <img src="img/card.png" class="hero-card glow delay2">
+        </div>
+    </section>
+
+    <!-- SELECTOR DE SIGNOS -->
+    <section class="signos" id="signos">
+        <h2>Selecciona Tu Signo</h2>
+
+        <div class="signo-grid">
+            <div class="signo" onclick="generar('aries')">♈ Aries</div>
+            <div class="signo" onclick="generar('tauro')">♉ Tauro</div>
+            <div class="signo" onclick="generar('geminis')">♊ Géminis</div>
+            <div class="signo" onclick="generar('cancer')">♋ Cáncer</div>
+            <div class="signo" onclick="generar('leo')">♌ Leo</div>
+            <div class="signo" onclick="generar('virgo')">♍ Virgo</div>
+            <div class="signo" onclick="generar('libra')">♎ Libra</div>
+            <div class="signo" onclick="generar('escorpio')">♏ Escorpio</div>
+            <div class="signo" onclick="generar('sagitario')">♐ Sagitario</div>
+            <div class="signo" onclick="generar('capricornio')">♑ Capricornio</div>
+            <div class="signo" onclick="generar('acuario')">♒ Acuario</div>
+            <div class="signo" onclick="generar('piscis')">♓ Piscis</div>
+      </div>
+    </section>
+
+      <!-- LECTURA COMPLETA -->
+         <section class="lectura" id="lectura">
+        <h2 id="signoTitulo"></h2>
+
+        <!-- HORÓSCOPO -->
+        <div class="bloque">
+            <h3>Horóscopo del Día</h3>
+            <p id="horoscopo"></p>
+        </div>
+
+        <!-- CARTA DEL DÍA -->
+       <div class="bloque">
+         <h3>Carta del Día</h3>
+
+        <div class="card-3d" id="cartaDia" onclick="voltearCarta(this)">
+          <div class="card-inner">
+             <img class="card-face front" src="img/card.png" alt="Carta tapada">
+             <img class="card-face back" src="" alt="Carta revelada">
+        </div>
+        </div>
+
+        <p id="cartaTexto"></p>
+       </div>
+
+      <!-- TAROT 3 CARTAS -->
+         <div class="bloque">
+          <h3>Tirada de 3 Cartas</h3>
+
+         <div class="tres-cartas">
+      <div>
+        <p>Pasado</p>
+          <div class="card-3d" id="cartaPasado" onclick="voltearCarta(this)">
+          <div class="card-inner">
+                <img class="card-face front" src="img/card.png" alt="Carta tapada">
+                <img class="card-face back" src="" alt="Carta revelada">
+        </div>
+        </div>
+           <span id="textoPasado"></span>
+        </div>
+
+        <div>
+      <p>Presente</p>
+          <div class="card-3d" id="cartaPresente" onclick="voltearCarta(this)">
+             <div class="card-inner">
+               <img class="card-face front" src="img/card.png" alt="Carta tapada">
+               <img class="card-face back" src="" alt="Carta revelada">
+             </div>
+           </div>
+               <span id="textoPresente"></span>
+           </div>
+
+           <div>
+        <p>Futuro</p>
+          <div class="card-3d" id="cartaFuturo" onclick="voltearCarta(this)">
+                   <div class="card-inner">
+                      <img class="card-face front" src="img/card.png" alt="Carta tapada">
+                      <img class="card-face back" src="" alt="Carta revelada">
+                   </div>
+                   </div>
+                  <span id="textoFuturo"></span>
+               </div>
+           </div>
+         </div>
+
+
+    <!-- ENERGÍA -->
+      <div class="energia-flex">
+            <div>
+                <h4>Color del Día</h4>
+                <p id="color"></p>
+            </div>
+            <div>
+                <h4>Número del Día</h4>
+                <p id="numero"></p>
+            </div>
+        </div>
+
+      <!-- COMPATIBILIDAD -->
+        <div class="bloque">
+            <h3>Compatibilidad Amorosa</h3>
+            <select id="otroSigno" onchange="compatibilidad()">
+                <option value="">Selecciona un signo</option>
+                <option value="aries">Aries</option>
+                <option value="tauro">Tauro</option>
+                <option value="geminis">Géminis</option>
+                <option value="cancer">Cáncer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="escorpio">Escorpio</option>
+                <option value="sagitario">Sagitario</option>
+                <option value="capricornio">Capricornio</option>
+                <option value="acuario">Acuario</option>
+                <option value="piscis">Piscis</option>
+            </select>
+            <p id="compatibilidadTexto"></p>
+        </div>
+
+      <!-- LECTURA DEL MES -->
+        <div class="bloque">
+            <h3>Lectura del Mes</h3>
+            <p id="mensual"></p>
+        </div>
+
+      </section>
+
+       <footer>
+        © 2025 Energía Mística | Creado para Jesi 💜
+      </footer>
+
+      <script src="script.js"></script>
+      </body>
+     </html>
+
+
